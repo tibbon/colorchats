@@ -3,15 +3,16 @@ var uri      = scheme + window.document.location.host + "/";
 var ws       = new WebSocket(uri);
 ws.onmessage = function(message) {
   var data = JSON.parse(message.data);
-  console.log(message.data);
-  $("#chat-text").append("<div class='panel panel-default'><div class='panel-heading'>" + data.handle + "</div><div class='panel-body'>" + data.text + "</div></div>");
-  $("#chat-text").stop().animate({
-    scrollTop: $('#chat-text')[0].scrollHeight
-  }, 800);
+  console.log(String.fromCharCode(message.data.key));
+  // $("#chat-text").append("<div class='panel panel-default'><div class='panel-heading'>" + data.handle + "</div><div class='panel-body'>" + data.text + "</div></div>");
+  // $("#chat-text").stop().animate({
+  //   scrollTop: $('#chat-text')[0].scrollHeight
+  // }, 800);
 };
 
 $("#input-form").keypress(function(event) {
   console.log(event.which);
+  ws.send(JSON.stringify({handle: handle, key: event.which}));
 });
 
 
