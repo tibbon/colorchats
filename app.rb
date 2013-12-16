@@ -1,8 +1,5 @@
 require 'sinatra/base'
-
-configure :production do
-  require 'newrelic_rpm'
-end
+require 'newrelic_rpm'
 
 module ChatDemo
   class App < Sinatra::Base
