@@ -5,6 +5,7 @@ GEM
     faye-websocket (0.7.0)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.3.0)
+    newrelic_rpm (3.7.0.177)
     puma (2.6.0)
       rack (>= 1.1, < 2.0)
     rack (1.5.2)
@@ -23,6 +24,7 @@ PLATFORMS
 
 DEPENDENCIES
   faye-websocket
+  newrelic_rpm
   puma
   redis
   sinatra

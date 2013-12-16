@@ -1,5 +1,9 @@
 require 'sinatra/base'
 
+configure :production do
+  require 'newrelic_rpm'
+end
+
 module ChatDemo
   class App < Sinatra::Base
     get "/" do
