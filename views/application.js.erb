@@ -14,7 +14,6 @@ ws.onmessage = function(message) {
 };
 
 $("#input-form").keypress(function(event) {
-  var handle = $("#input-handle")[0].value;
   event.preventDefault();
   ws.send(JSON.stringify({color: my_color, key: event.which}));
 });
